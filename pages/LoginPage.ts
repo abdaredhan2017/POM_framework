@@ -12,7 +12,9 @@ export class LoginPage extends BasePage {
     static async login(username: string, password: string) {
         await this.page.locator(this.textbox_loginname).fill(username);
         await this.page.locator(this.textbox_password).fill(password);
+        await this.page.waitForTimeout(3000);
         await this.page.locator(this.button_login).click();
+        await this.page.waitForTimeout(3000);
         console.log("Login Completed");
     }
 
